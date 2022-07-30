@@ -3,7 +3,11 @@
 
 {% block content %}
 
-<head><link rel="stylesheet" type="text/css" href="{% static '/css/navbar.css' %}"></head>
+<head>
+    <link rel="stylesheet" href="aos-by-red.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" type="text/css" href="{% static '/css/navbar.css' %}">
+</head>
 
 <nav class="nav">
     <div class="container">
@@ -47,7 +51,35 @@
 
 <section class="home">
 </section>
+
+<br>
+
+
+<div class="container1">
+    <!-- Animation 1 ---------------------------------------------------------->
+              <div class="divl" data-aos="fade-left" data-aos-duration="4000" data-aos-once="true">
+                <img src="{% static 'images/thumb---1NCTv.jpeg' %}" width="75%" height="75%">
+              </div>
+    <!-- Animation 2 ------------------------------------------------------------>
+              <div class="divr" data-aos="fade-right">
+                <img src="{% static 'images/thumb---2uIMh.jpeg' %}" width="75%" height="75%">
+              </div>
+    <!-- Animation 1 ----------------------------------------------------------->
+            <div class="divl" data-aos="fade-left" data-aos-duration="4000" data-aos-once="true">
+                <img src="{% static 'images/thumb---3t6S3.jpeg' %}" width="75%" height="75%">
+            </div>
+    <!-------------------------------------------------------------->
+</div>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 3000,
+    once: true,
+  });
+</script>
+
 <div style="height: 1000px">
+    
 <!-- just to make scrolling effect possible -->
     <h2 class="myH2">What is this ?</h2>
     <p class="myP">This is a responsive fixed navbar animated on scroll</p>
