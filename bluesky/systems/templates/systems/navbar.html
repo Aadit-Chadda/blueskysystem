@@ -1,16 +1,43 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main_navbar.css' %}">
     <title>BLUE SKY SYSTEM</title>
 </head>
 <body>
 
     {% block content %}
 
-    <h3> Navbar </h3>
+    <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="{% static 'images/long-logo.png' %}"></a>
+            </div>
+            <div class="main_list" id="mainListDiv">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Solution</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Our Clients</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="media_button">
+                <button class="main_media_button" id="mediaButton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+        
+    <section class="home"></section>
 
     {% endblock %}
 

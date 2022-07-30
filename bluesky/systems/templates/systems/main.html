@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +9,7 @@
     <title>BLUE SKY SYSTEM</title>
 </head>
 <body>
-    <h1> BLUE SKY SYSTEM </h1>
 
-    {% include 'systems/navbar.html' %}
-
-
-    <hr>
 
 
     {% block content %}
@@ -20,8 +17,6 @@
 
     {% endblock %}
 
-<hr>
-<h5> footer</h5>
 
 </body>
 </html>
