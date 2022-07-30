@@ -11,13 +11,13 @@ def about_us(request):
     return render(request, 'systems/about_us.html')
 
 def our_solutions(request):
-    return (request, 'systems/our_solutions.html')
+    return render (request, 'systems/our_solutions.html')
 
 def our_products(request):
-    return (request, 'systems/our_products.html')
+    return render (request, 'systems/our_products.html')
 
 def our_clients(request):
-    return (request, 'systems/our_clients.html')
+    return render (request, 'systems/our_clients.html')
     
 def blogs(request):
-    return (request, 'systems/blogs.html')
+    return render (request, 'systems/blogs.html')
