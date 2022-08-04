@@ -6,39 +6,118 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{% static '/css/main_navbar.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main_navbar.css' %}" />
     <title>BLUE SKY SYSTEM</title>
 </head>
-<body>
+<body class="mobile">
 
     {% block content %}
 
-    <nav class="nav">
-        <div class="container">
-            <div class="logo">
+    <nav>
+        <div class="container nav-wrapper">
+            <div class="brand">
                 <a href="#"><img src="{% static 'images/long-logo.png' %}"></a>
             </div>
-            <div class="main_list" id="mainListDiv">
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Solution</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Our Clients</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+            <div class="hamburger">
+                <span ></span>
+                <span></span>
+                <span></span>
             </div>
-            <div class="media_button">
-                <button class="main_media_button" id="mediaButton">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+            <ul class="nav-list">
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">About Us</a>
+                </li>
+                <li>
+                    <a href="#">Our Solutions</a>
+                    <ul class="dropdown-list">
+                        <li><a href="#">Add later</a></li>
+                        <hr>
+                        <li><a href="#">Add later</a></li>
+                        <hr>
+                        <li><a href="#">Add later</a></li>
+                        <hr>
+                        <li><a href="#">Add later</a></li>
+                        <hr>
+                        <li><a href="#">Add later</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Our Products</a>
+                    <ul class="dropdown-list">
+                        <li><a href="#">Add later</a></li>
+                        <hr>
+                        <li><a href="#">Add later</a></li>
+                        <hr>
+                        <li><a href="#">Add later</a></li>
+                        <hr>
+                        <li><a href="#">Add later</a></li>
+                        <hr>
+                        <li><a href="#">Add later</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Our Clients</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
         </div>
     </nav>
-        
-    <section class="home"></section>
 
+    <br>
+
+    <script>
+        let hamburger = document.querySelector('.hamburger')
+        let mobilNav = document.querySelector('.nav-list')
+        let bars = document.querySelectorAll('.hamburger span')
+
+        let isActive = false
+
+        hamburger.addEventListener('click', function () { 
+            mobilNav.classList.toggle('open')
+            if(!isActive) {
+                bars[0].style.transform = 'rotate(45deg)'
+                bars[1].style.opacity = '0'
+                bars[2].style.transform = 'rotate(-45deg)'
+
+                isActive = true
+            } else {
+                bars[0].style.transform = 'rotate(0deg)'
+                bars[1].style.opacity = '1'
+                bars[2].style.transform = 'rotate(0deg)'
+ 
+                isActive = false
+            }
+        })
+
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("container");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        $(window).scroll(function() {
+            if($(this).scrollTop() > 3){
+                $('.container').addClass('fixed')
+            } else {
+                $('.container').removeClass('fixed')
+            }
+        })
+        
+    </script>
+
+    
     {% endblock %}
 
 

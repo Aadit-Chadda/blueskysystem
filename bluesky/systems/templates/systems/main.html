@@ -8,15 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLUE SKY SYSTEM</title>
 </head>
-<body>
+<body class="mobile">
 
-
+    {% include 'systems/navbar.html' %}
 
     {% block content %}
     
 
     {% endblock %}
 
+
+    <script>
+
+        window.addEventListener('resize', function(){
+            addRequiredClass();
+        })
+
+        function addRequiredClass() {
+            if (window.innerWidth < 950) {
+                document.body.classList.add('mobile')
+            } else {
+                document.body.classList.remove('mobile')
+            }
+        }
+
+        window.onload = addRequiredClass
+    </script>
+
+
+    <script src="{% static 'js/main.js' %}"></script>
 
 </body>
 </html>
